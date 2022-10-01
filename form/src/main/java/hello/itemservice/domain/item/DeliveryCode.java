@@ -8,5 +8,5 @@ import lombok.Data;
 public class DeliveryCode {
 
     private String code;
-    private String displayname;
+    private String displayName;
 }
