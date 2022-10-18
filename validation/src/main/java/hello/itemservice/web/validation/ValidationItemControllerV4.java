@@ -16,10 +16,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
-@RequestMapping("/validation/v3/items")
+@RequestMapping("/validation/v4/items")
 @RequiredArgsConstructor
 @Slf4j
-public class ValidationItemControllerV3 {
+public class ValidationItemControllerV4 {
 
     private final ItemRepository itemRepository;
 
@@ -64,7 +64,7 @@ public class ValidationItemControllerV3 {
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
-        return "redirect:/validation/v3/items/{itemId}";
+        return "redirect:/validation/v4/items/{itemId}";
     }
 
     @PostMapping("/add")
@@ -88,7 +88,7 @@ public class ValidationItemControllerV3 {
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
         redirectAttributes.addAttribute("status", true);
-        return "redirect:/validation/v3/items/{itemId}";
+        return "redirect:/validation/v4/items/{itemId}";
     }
 
     @GetMapping("/{itemId}/edit")
@@ -116,7 +116,7 @@ public class ValidationItemControllerV3 {
         }
 
         itemRepository.update(itemId, item);
-        return "redirect:/validation/v3/items/{itemId}";
+        return "redirect:/validation/v4/items/{itemId}";
     }
 
     @PostMapping("/{itemId}/edit")
@@ -137,7 +137,7 @@ public class ValidationItemControllerV3 {
         }
 
         itemRepository.update(itemId, item);
-        return "redirect:/validation/v3/items/{itemId}";
+        return "redirect:/validation/v4/items/{itemId}";
     }
 
 }
